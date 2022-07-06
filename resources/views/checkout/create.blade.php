@@ -44,20 +44,18 @@
                                     <input name="occupation" type="text" class="form-control {{$errors->has('occupation') ? 'is-invalid' : ''}}" value="{{old('occupation') ?: Auth::user()->occupation}}" required />
                                 </div>
                                 <div class="mb-4">
-                                    <label for="exampleInputEmail1" class="form-label">Card Number</label>
-                                    <input name="card_number" type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <label class="form-label">Phone</label>
+                                    <input name="phone" type="text" class="form-control {{$errors->has('phone') ? 'is-invalid' : ''}}" value="{{old('phone') ?: Auth::user()->phone}}" required />
+                                    @if ($errors->has('phone'))
+                                        <p class="text-danger">{{$errors->first('phone')}}</p>
+                                    @endif
                                 </div>
-                                <div class="mb-5">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <label for="exampleInputEmail1" class="form-label">Expired</label>
-                                            <input name="expired" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <label for="exampleInputEmail1" class="form-label">CVC</label>
-                                            <input name="cvc" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                        </div>
-                                    </div>
+                                <div class="mb-4">
+                                    <label class="form-label">Address</label>
+                                    <input name="address" type="text" class="form-control {{$errors->has('address') ? 'is-invalid' : ''}}" value="{{old('address') ?: Auth::user()->address}}" required />
+                                    @if ($errors->has('address'))
+                                        <p class="text-danger">{{$errors->first('address')}}</p>
+                                    @endif
                                 </div>
                                 <button type="submit" class="w-100 btn btn-primary">Pay Now</button>
                                 <p class="text-center subheader mt-4">
